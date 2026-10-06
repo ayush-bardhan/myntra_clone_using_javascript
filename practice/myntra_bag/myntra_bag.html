@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+
+    <style>
+        .class-button{
+            color: rgb(131, 54, 54);
+            background-color: rgb(130, 191, 40);
+            border: none;
+            padding: 10px 10px 10px 10px;
+            border-radius: 15px;
+        }
+
+        #Id-button {
+            padding: 5px 15px;
+            border: 2px solid black;
+            border-radius: 10px;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+<body>
+   <button class = "class-button" onclick="cartQuantity = cartQuantity + 1
+    document.querySelector('#cart-summary').
+    innerText = 'Your bag has ' + cartQuantity + ' items';
+"> Add to bag </button>
+    <button id = "Id-button"  onclick="cartQuantity = cartQuantity - 1
+    document.querySelector('#cart-summary').
+    innerText = 'Your bag has ' + cartQuantity + ' items';"> wishlist❤️ </button>
+  
+  
+  <button class = "class-button" onclick="cartQuantity = cartQuantity + 2
+    document.querySelector('#cart-summary').
+    innerText = 'Your bag has ' + cartQuantity + ' items';"> Add 1+1 sale button </button>
+    
+
+   <h1 id = "cart-summary">
+   </h1>
+
+   <script>
+    let cartQuantity = 0;
+    document.querySelector('#cart-summary').
+    innerText = 'Your bag has ' + cartQuantity + ' items';
+
+   </script>
+</body>
+</html>

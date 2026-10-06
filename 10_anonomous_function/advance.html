@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    let sum = function(num1,num2){
+      return num1 + num2
+    }
+
+    // let newSum = sum;
+
+    // console.log(sum(4,5));
+
+    let sumThreeNumber = function(num1,num2,num3,sumTwoNmbers){
+      let sum1 = sumTwoNmbers(num1 , num2);
+      return sumTwoNmbers(sum1,num3);
+    }
+
+    console.log(sumThreeNumber(4,5,6,sum));
+
+
+  </script>
+</body>
+</html>

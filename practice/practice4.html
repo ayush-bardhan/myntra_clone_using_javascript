@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Document</title>
+
+    <style>
+        .odd {
+            background-color: chocolate;
+        } 
+
+        .even {
+            background-color: lawngreen;
+        }
+    </style>
+</head>
+
+<body>
+
+    <p></p>
+
+    <button id="my-button" onclick="timeClicked()">
+        Click me
+    </button>
+
+    <div></div>
+
+    <script>
+
+        let mytime = new Date();
+        let hour = mytime.getHours();
+
+        if (hour < 12) {
+            console.log('good morning');
+            document.querySelector('p').innerText = "Good morning Ayush";
+
+        } else if (hour >= 12 && hour <= 16) {
+            console.log('good afternoon');
+            document.querySelector('p').innerText = "Good afternoon Ayush";
+
+        } else if (hour <= 21) {
+            console.log('good evening');
+            document.querySelector('p').innerText = "Good evening Ayush";
+
+        } else {
+            console.log('good night');
+            document.querySelector('p').innerText = "Good night Ayush";
+        }
+
+
+        let count = Number(localStorage.getItem('count')) || 0;
+
+        let button = document.querySelector('#my-button');
+
+
+        function timeClicked() {
+
+            count++;
+
+            localStorage.setItem('count', count);
+
+            updateButton();
+        }
+
+
+        function updateButton() {
+
+            if (count % 2 == 0) {
+
+                button.classList.remove('odd');
+                button.classList.add('even');
+
+            } else {
+
+                button.classList.remove('even');
+                button.classList.add('odd');
+            }
+
+            button.innerText = count;
+
+            document.querySelector('div').innerText =
+                `I have been clicked ${count} times`;
+        }
+
+    </script>
+
+</body>
+
+</html>
